@@ -1,0 +1,2 @@
+# My Notes
+This is a collection of my notes on different topics related to web development and coding in general. These notes are taken as I am learning a topic or struggling through understanding something. I am by no means an expert on any topics in these notes but they are helpful for me to write to deepen my understanding of the things I am learning.

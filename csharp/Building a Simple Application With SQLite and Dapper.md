@@ -21,7 +21,18 @@ string sql = @"SELECT * FROM Accounts WHERE HolderID=@HolderID";
 var results = await connection.QueryAsync<Account>(sql, new { HolderID = 12});
 return [.. results];
 ```
-- The first line opens the SqliteConnection with the `using` keyword so that the connection will close at the end of the code block without having to manually close it. 
+- The first line opens the SqliteConnection with the `using` keyword so that the connection will close **at** the end of the code block without having to manually close it. 
 - The second line creates the sql string to pass into the query. 
 - The third line assigns the Enumerable returned from QueryAsync. Inside the QueryAsync method you pass: the sql statement as the first argument and an anonymous object as the second argument. The second argument is only necessary if we are passing a value to the sql statement. (In this case we are passing the HolderID).
 - The fourth line returns the enumerable as a list. The short hand for converting an Enumerable to a List is `[.. enumerable]` but you could also do `enumerable.ToList()`.  
+## Modeling Data For SQLite
+There are five "storage classes" in Sqlite 
+- NULL
+- INTEGER
+- REAL
+- TEXT
+- BLOB
+For mapping data types in my C# application:
+- INTEGER -> long
+- REAL -> double
+- TEXT -> string
